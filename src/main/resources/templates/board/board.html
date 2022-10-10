@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--<html lang="en">-->
+<head>
+    <meta charset="UTF-8">
+    <title>Board List</title>
+    <style>
+        table, tr, th, td{
+            border : 1px solid black
+        }
+    </style>
+</head>
+<body>
+    <h1 th:text="${name}"></h1>
+    <h2 th:text="${test}"></h2>
+    <h3 th:text="${board.getTitle}"></h3>
+    <table>
+        <tr>
+            <td>Number</td>
+            <td>Title</td>
+            <td>Content</td>
+            <td>Writer</td>
+        </tr>
+        <tr>
+            <td th:text="${board.getNum}"></td>
+            <td th:text="${board.getTitle}"></td>
+            <td th:text="${board.getContent}"></td>
+            <td th:text="${board.getWriter}"></td>
+        </tr>
+    </table>
+<!--    <form action="/board" method="post">-->
+<!--        num : <input type="text" id="num" name="num">-->
+<!--        title : <input type="text" id="title" name="title">-->
+<!--        content : <input type="text" id="content" name="content">-->
+<!--        writer : <input type="text" id="writer" name="writer">-->
+<!--        <input type="submit">-->
+<!--    </form>-->
+</body>
+</html>
