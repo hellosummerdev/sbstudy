@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 페이지</title>
+</head>
+<body>
+
+<form action="/user/login" method="post">
+    <div>ID : <input type="text" id="id" name="id"></div>
+    <div>PWD : <input type="password" id="password" name="password"></div>
+    <input type="submit" value="로그인">
+</form>
+<span th:text="${message}" style="color : red"></span>
+</body>
+</html>
