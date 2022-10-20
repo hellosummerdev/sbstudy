@@ -3,11 +3,14 @@ package com.sbstudy.board;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 
 @Controller
 // 객체를 만들어 주는데, 단지 컨트롤러 역할을 하는 객체이다. 오직 하나만 생성된다(싱글톤).
 public class BoardController {
+
+    private BoardService boardService;
 
     BoardController(){
         System.out.println("success");
@@ -29,6 +32,11 @@ public class BoardController {
         model.addAttribute("name", "Summer");
         model.addAttribute("test", "Test");
         return "board/board";
+    }
+
+    @PostMapping("/board/create")
+    public String createBoard(BoardDto boardDto){
+        boardService.insertBoard(boardDto);
     }
 
 }

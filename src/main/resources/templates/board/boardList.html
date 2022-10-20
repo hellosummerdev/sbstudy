@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Board List</title>
 </head>
 <body>
   <h1>Board List</h1>
+  <h1 th:text="${name}"></h1>
+  <h2 th:text="${test}"></h2>
+  <h3 th:text="${board.getTitle}"></h3>
+  <table>
+      <tr>
+          <td>Number</td>
+          <td>Writer</td>
+          <td>Title</td>
+          <td>Content</td>
+      </tr>
+      <tr>
+          <td th:text="${board.getNum}"></td>
+          <td th:text="${board.getTitle}"></td>
+          <td th:text="${board.getContent}"></td>
+          <td th:text="${board.getWriter}"></td>
+      </tr>
+  </table>
 </body>
 </html>
