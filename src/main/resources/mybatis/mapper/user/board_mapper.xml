@@ -6,9 +6,9 @@
 <!--Mapper 폴더는 애플리케이션에서 사용할 쿼리를 담고 있는 XML 파일을 저장-->
 <!--SQL문을 XML형식의 파일로 분리시켜 저장 관리를 할 수 있고 Java소스 에서 id만 호출하여 개발을 하는데 편리해지는 장점-->
 
-<mapper namespace="com.sbstudy.board.BoardDto">
-    <insert id="insertBoard" parameterType="boardDto">
-        INSERT INTO BOARD (NUM, TITLE, CONTENT, WRITER)
-        VALUES (#{num}, #{title}, #{content}, #{writer})
+<mapper namespace="com.sbstudy.board.BoardDao">
+    <insert id="insertBoard" parameterType="boardDto" >
+        INSERT INTO BOARD (ID, USERNAME, NAME, TITLE, CONTENT)
+        VALUES (#{id}, #{username}, #{name}, #{title}, #{content})
     </insert>
 </mapper>

@@ -1,7 +1,8 @@
 package com.sbstudy.board;
 
-import java.util.List;
+import org.apache.ibatis.annotations.Mapper;
 
-public class BoardDao {
-
+@Mapper
+public interface BoardDao {
+    int insertBoard(BoardDto boardDto);
 }

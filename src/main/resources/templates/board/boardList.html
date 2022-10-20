@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Board List</title>
+    <style>
+        table, tr, th, td{
+            border : 1px solid black
+        }
+    </style>
 </head>
 <body>
   <h1>Board List</h1>
-  <h1 th:text="${name}"></h1>
-  <h2 th:text="${test}"></h2>
-  <h3 th:text="${board.getTitle}"></h3>
+
   <table>
       <tr>
-          <td>Number</td>
-          <td>Writer</td>
+          <td>Name</td>
           <td>Title</td>
           <td>Content</td>
+          <td>Date</td>
       </tr>
       <tr>
-          <td th:text="${board.getNum}"></td>
+          <td th:text="${board.getName}"></td>
           <td th:text="${board.getTitle}"></td>
           <td th:text="${board.getContent}"></td>
-          <td th:text="${board.getWriter}"></td>
+          <td th:text="${board.getCreateDate}"></td>
       </tr>
   </table>
 </body>
