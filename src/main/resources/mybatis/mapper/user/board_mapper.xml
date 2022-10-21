@@ -8,7 +8,12 @@
 
 <mapper namespace="com.sbstudy.board.BoardDao">
     <insert id="insertBoard" parameterType="boardDto" >
-        INSERT INTO BOARD (ID, USERNAME, NAME, TITLE, CONTENT)
-        VALUES (#{id}, #{username}, #{name}, #{title}, #{content})
+        INSERT INTO BOARD (ID, USERNAME, NAME, TITLE, CONTENT, CREATE_DATE)
+        VALUES (#{id}, #{username}, #{name}, #{title}, #{content}, NOW())
     </insert>
+
+    <select id="boardList" parameterType="boardDto" resultType="boardDto">
+        SELECT NAME, TITLE, CONTENT, CREATE_DATE
+        FROM BOARD
+    </select>
 </mapper>

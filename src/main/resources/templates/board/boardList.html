@@ -19,7 +19,7 @@
           <td>Content</td>
           <td>Date</td>
       </tr>
-      <tr>
+      <tr th:each="board : ${list}">
           <td th:text="${board.getName}"></td>
           <td th:text="${board.getTitle}"></td>
           <td th:text="${board.getContent}"></td>

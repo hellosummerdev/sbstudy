@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 
 @Controller
 // 객체를 만들어 주는데, 단지 컨트롤러 역할을 하는 객체이다. 오직 하나만 생성된다(싱글톤).
@@ -21,7 +23,7 @@ public class BoardController {
     // content-type : text/html
 
     @GetMapping("/board/board") //url주소
-    public String boardVIEW(Model model){
+    public String boardWrite(Model model){  // form for new board
 //        BoardDto boardDto = new BoardDto();
 //        boardDto.setSeq(1);
 //        boardDto.setTitle("This is title");
@@ -45,6 +47,16 @@ public class BoardController {
         } else {
             System.out.println("게시판 글 추가 실패");
         }
+        return "board/boardList";
+    }
+
+    @GetMapping("/board/boardList")
+    public String boardVIEW(Model model) {
+        // BoardDto boardDto = new BoardDto();
+
+        List<BoardDto> boardList = boardService.sellectAllBoard();
+        model.addAttribute("list", boardList);
+
         return "board/boardList";
     }
 
