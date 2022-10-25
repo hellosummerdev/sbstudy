@@ -1,21 +1,55 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<!--<html lang="en">-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Board Form</title>
+    <title>Board List</title>
+    <style>
+        td, th {
+            border : 1px solid black
+        }
+        table {
+            border : 1px solid black
+        }
+    </style>
 </head>
 <body>
-<!--    <h1 th:text="${}"></h1>-->
-<!--    <h2 th:text="${test}"></h2>-->
-<!--    <h3 th:text="${board.getTitle}"></h3>-->
-    <form action="/board/create" method="post">
-        id : <input type="text" id="id" name="id">
-        username : <input type="text" id="username" name="username">
-        name : <input type="text" id="name" name="name">
-        title : <input type="text" id="title" name="title">
-        content : <input type="text" id="content" name="content">
-        <input type="submit">
-    </form>
+    <table>
+    <!--    timeleaf를 통해서 게시판에 데이터를 뿌려보았다-->
+<!--        <tr>-->
+<!--            <th>Title</th>-->
+<!--            <th>Content</th>-->
+<!--            <th>User Id</th>-->
+<!--            <th>Date</th>-->
+<!--        </tr>-->
+<!--        <tr th:each="board : ${boardList}">-->
+<!--            <td th:text="*{board.getBoard_title()}"></td>-->
+<!--            <td th:text="*{board.getBoard_content()}"></td>-->
+<!--            <td th:text="*{board.getUser_id()}"></td>-->
+<!--            <td th:text="*{#dates.format(board.getCreated_at(), 'yyyy-MM-dd HH:mm:ss')}"></td>-->
+<!--            <td th:text="*{#dates.format(board.getUpdated_at(), 'yyyy-MM-dd HH:mm:ss')}"></td>-->
+<!--        </tr>-->
+<!--        </tr>-->
+    <div>
+        <a href="/board/form">게시글 작성하기</a>
+    </div>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Writer</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody id="tbody">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="/js/board.js"></script>
 </body>
 </html>

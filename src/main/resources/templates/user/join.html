@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+
+  <form action="/user/join" method="post">
+    <table>
+      <tr>
+        <td><label for="user_id" />ID</td>
+        <td><input type="text" id="user_id" name="user_id"></td>
+      </tr>
+      <tr>
+        <td><label for="user_pwd" />PASSWORD</td>
+        <td><input type="password" id="user_pwd" name="user_pwd"></td>
+      </tr>
+      <tr>
+        <td><label for="user_name" />NAME</td>
+        <td><input type="text" id="user_name" name="user_name"></td>
+      </tr>
+
+    </table>
+    <input type="submit" value="회원가입">
+  </form>
+</body>
+</html>

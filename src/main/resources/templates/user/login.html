@@ -6,11 +6,11 @@
 </head>
 <body>
 
-<form action="/user/login" method="post">
-    <div>ID : <input type="text" id="id" name="id"></div>
-    <div>PWD : <input type="password" id="password" name="password"></div>
-    <input type="submit" value="로그인">
-</form>
-<span th:text="${message}" style="color : red"></span>
+    <form action="/user/login" method="post">
+        <div><label for="user_id" />ID : <input type="text" id="user_id" name="user_id"></div>
+        <div><label for="user_pwd" />PWD : <input type="password" id="user_pwd" name="user_pwd"></div>
+        <input type="submit" value="로그인">
+    </form>
+    <div><a href="/user/join">회원가입</a></div>
 </body>
 </html>

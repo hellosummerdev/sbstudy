@@ -8,23 +8,23 @@ import java.util.List;
 @Service
 public class BoardService {
     @Autowired
-    private BoardDao boardDao;
+    private BoardMapper boardMapper;
 
-    public boolean insertBoard(BoardDto boardDto) {
-        int isInsert = boardDao.insertBoard(boardDto);
-
-        if (isInsert == 1) {
-            return true;
-        } else {
-            return false;
-        }
+    public void insertBoard(BoardDto boardDto) {
+        boardMapper.insertBoard(boardDto);
     }
 
-//    public List<BoardDto> boardList() {
-//        return boardDao.boardList();
-//    }
+    public List<BoardDto> selectBoard() {
+//        Dummy Data
+//        for (int i = 1; i <= 100; i++) {
+//            BoardDto param = new BoardDto();
+//            param.setBoard_title("title"+i);
+//            param.setBoard_content("content"+i);
+//            param.setUser_id("test");
+//            boardMapper.insertBoard(param);
+//        }
 
-    public List<BoardDto> sellectAllBoard() {
-        return boardDao.boardList();
+        List<BoardDto> boardList= boardMapper.selectBoard();
+        return boardList;
     }
 }
