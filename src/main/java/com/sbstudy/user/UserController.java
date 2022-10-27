@@ -23,13 +23,13 @@ public class UserController {
     public String LoginView(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         System.out.println(session);
-        session.removeAttribute("id");
+//        session.removeAttribute("id");
         return "/user/login";
     }
 
     @PostMapping("/user/login")
     public String LoginPost(UserLoginDto userLoginDto, HttpSession session) {  // @ModelAttribute 자주쓰는거를 알아서 필요한걸 주입해준다.
-         int isUser = userService.userCheck(userLoginDto);
+        int isUser = userService.userCheck(userLoginDto);
 //        System.out.println(userLoginDto); // lombok toString print
         if (isUser == 1) {
             session.setAttribute("id", userLoginDto.getUser_id());
@@ -56,6 +56,18 @@ public class UserController {
         }
 
     }
+
+    @GetMapping("/user/logout")
+    public String LogoutView(HttpServletRequest request) throws Exception {
+        System.out.println("log out method approached");
+        HttpSession session = request.getSession();
+        session.invalidate();
+
+        return "redirect:/user/login";
+    }
+
+
+
 
     // [Data Controller]
 }

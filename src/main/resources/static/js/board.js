@@ -1,6 +1,6 @@
 
 // html이 랜더링 되었을 때 동작하는 함수
-window.onload = async () => {
+window.onload = async () => { // onload : 문서에 포함된 모든 페이지 구성요소(css, img등)가 로드된 후에 실행된다.
     await fnGetBoardList(); // 이 함수 실행될때까지 아래로 내려가지마라, 순서를 보장해준다
 }
 
